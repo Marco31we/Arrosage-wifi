@@ -61,14 +61,22 @@ const char* host = "script.google.com";
 // test script en dev https://script.google.com/macros/s/AKfycbyYuSVsI_-sfBMaoF_GeZUvGi2gg6et_XwCMJWy26w/dev?p=sss
 // google shhet : https://docs.google.com/spreadsheets/d/1P3OJiMyDQzGuwrHbno4i8qffbFtkZpRMuy0_7JVo0I0/edit#gid=0
 //const char *GScriptId = "AKfycbyYuSVsI_-sfBMaoF_GeZUvGi2gg6et_XwCMJWy26w";  // dev mais ne fonctionne pas depuis ESP8266, rtn  "Connection to re-directed URL failed"
-//const char *GScriptId = "AKfycbyS4fKU9SqgfREqdUAMWp2hOOGlVdBX0lXz_A_mdqD9SRp2yrabTY37DYuEZJ0XeEb_"; // deployé "Integ", rtn "...n'est pas un type de réponse compatible"
-const char *GScriptId = "AKfycbxf_sIqI8Gb9OFpU5MSRX4kdWtaYYnz2-ovjOgN7gl_QFj5x2pDNIr1DbWcLaW16lDq"; // deployé "Integ2", rtn "Connection to re-directed URL failed!"
+//const char *GScriptId = "AKfycbyS4fKU9SqgfREqdUAMWp2hOOGlVdBX0lXz_A_mdqD9SRp2yrabTY37DYuEZJ0XeEb_"; // deployé "Integ", rtn 302 "...n'est pas un type de réponse compatible"
+//const char *GScriptId = "AKfycbxf_sIqI8Gb9OFpU5MSRX4kdWtaYYnz2-ovjOgN7gl_QFj5x2pDNIr1DbWcLaW16lDq"; // deployé "Integ2", rtn 302 "Connection to re-directed URL failed!"
+//const char *GScriptId = "AKfycbz7Tb-VOYyJljMe-kbLhCeCYBx9sswynjB9jTud1I8GPB7dynR4t95Iwmhbsj-3TfnP"; // deployé "Integ3", rtn 200, OK avec header, style, content
+//const char *GScriptId = "AKfycbzfaoNGfsZTEI5T2gYHou1_0TbqBXV2xUGOsynUeQ8mPo2MVke9Ih_9J8luqtuIozgA"; // deployé "Integ4", rtn 200, OK avec content
+//const char *GScriptId = "AKfycbykVGCdorSVcTV7xyzuXm6lrdb-7t1VvHMAFu5DGHDm9x9WchgD82X6YfBw11YWzgts"; // deployé "Integ5", rtn 200, OK avec content html+json
+const char *GScriptId = "AKfycbzo2p8sUyZVTnt4A_0XkEusHGGJH8xr8v0BCXRClypaU9ON2n0oi0xy9SxIApuT8kAq"; // deployé "Integ6", rtn 302, NOK avec content json
+
+
+
+
+//const char *GScriptId = "AKfycbxhFVhM0TJHIui4tTXCQrjQSDw6Bx2jc3rzBkkuFwlpjtb0W4g"; // projet Client_google_sheet
 
 
 //String url = String("/macros/s/") + GScriptId + "/dev?";
 String url = String("/macros/s/") + GScriptId + "/exec?";
 const int httpsPort = 443;
-// echo | openssl s_client -connect script.google.com:443 |& openssl x509 -fingerprint -noout
 HTTPSRedirect* client = nullptr;
 
 // NTP 
